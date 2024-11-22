@@ -12,6 +12,8 @@
 			nom1 = Console.ReadLine();  
 			Console.WriteLine("Digite segundo numero");
 			nom2 = Console.ReadLine();
+            Console.WriteLine("hola maria");
+            Console.WriteLine("hola otra ves");
   
 			
 
