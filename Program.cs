@@ -12,7 +12,7 @@
 			nom1 = Console.ReadLine();  
 			Console.WriteLine("Digite segundo numero");
 			nom2 = Console.ReadLine();
-  
+			// AHORA REVERTIMOS EL ULTIMO COMMIT Y PUSISMOS ESTE TEXTO COMO COMENTARIO  
 			
 
 			Suma suma1 = new Suma(nom1, nom2);
