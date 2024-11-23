@@ -1,32 +1,38 @@
-﻿namespace OperacionesMatematicas
+﻿//using OperacionesMatematicas;
+
+namespace OperacionesMatematicas
 {
 	public class OperacionesMatematica
 	{
-		public static string nom1;
-		public static string nom2;
+		public static int numero1;
+		public static int numero2;
 		public static int resultado;
-
 		public static void Main(string[] args)
 		{
+			// se le pide al usuario dos numeros
 			Console.WriteLine("Digite primer numero");
-			nom1 = Console.ReadLine();  
+			string? num1 = Console.ReadLine();
+			bool esNumero1 = int.TryParse(num1, out numero1);
+
 			Console.WriteLine("Digite segundo numero");
-			nom2 = Console.ReadLine();
-			// AHORA REVERTIMOS EL ULTIMO COMMIT Y PUSISMOS ESTE TEXTO COMO COMENTARIO
-			// he creado un BRANCH en C# para de prueba y ahora are un commit
+			string? num2 = Console.ReadLine();
+			bool esNumero2 = int.TryParse(num2, out numero2);
 			
+			if (esNumero1 == true && esNumero2 == true)
+			{
+				// se realizar la diferentes operaciones matematicas con los 2 numeros proporcionado por el usuario
 
-			Suma suma1 = new Suma(nom1, nom2);
-			Console.WriteLine($"el resultado de la suma es: {suma1.resultadoSuma}");
+				Operaciones operacion = new Operaciones();
+                Console.WriteLine($"El resultado de la Suma es: {operacion.Suma(numero1, numero2)}");
+                Console.WriteLine($"El resultado de la Resta es: {operacion.Resta(numero1, numero2)}");
+                Console.WriteLine($"El resultado de la Multiplicacion es: {operacion.Multiplicacion(numero1, numero2)}");
+                Console.WriteLine($"El resultado de la Division es: {operacion.Division(numero1, numero2)}");
 
-			Resta resta1 = new Resta(nom1, nom2);
-			Console.WriteLine($"el resultado de la resta es: {resta1.resultadoResta}");
-
-			Multiplicar multiplicar1 = new Multiplicar(nom1, nom2);
-			Console.WriteLine($"el resultado de la multiplicacion es: {multiplicar1.resultadoMultiplicar}");
-
-			Division division1 = new Division(nom1, nom2);
-			Console.WriteLine($"el resultado de la division es: {division1.resultadoDivision}");
+			}
+			else
+			{
+				Console.WriteLine("alguno de los digitos no es un numero!");
+			}
 		}
 	}
 }
