@@ -18,7 +18,7 @@ namespace OperacionesMatematicas
 			string? num2 = Console.ReadLine();
 			bool esNumero2 = int.TryParse(num2, out numero2);
 			
-			if (esNumero1 == true && esNumero2 == true)
+			if (esNumero1 && esNumero2)
 			{
 				// se realizar la diferentes operaciones matematicas con los 2 numeros proporcionado por el usuario
 
@@ -31,8 +31,17 @@ namespace OperacionesMatematicas
 			}
 			else
 			{
-				Console.WriteLine("alguno de los digitos no es un numero!");
-			}
+                if (!esNumero1)
+                {
+                    Console.WriteLine($"Primer digito \"{num1}\" no es un numero o contiene caracteres no validos");
+                }
+                
+                if (!esNumero2)
+                {
+                    Console.WriteLine($"Segundo digito \"{num2}\" no es un numero o contiene caracteres no validos");
+                }
+            }
+			
 		}
 	}
 }
